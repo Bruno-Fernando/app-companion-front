@@ -1,35 +1,14 @@
-import { useState } from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
+import { RouterProvider } from 'react-router-dom';
 
-import reactLogo from './assets/react.svg';
-import './App.css';
+import router from './Router';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button
-          type="button"
-          onClick={() => setCount((previousCount) => previousCount + 1)}
-        >
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Teste de deploy com PWA</p>
-    </div>
+    <>
+      <CssBaseline />
+      <RouterProvider router={router} />
+    </>
   );
 }
 
