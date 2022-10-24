@@ -12,22 +12,22 @@ function Home() {
 
   if (!decodedToken) {
     navigate('/login');
-  } else {
-    return (
-      <Box
-        sx={{
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Avatar src={decodedToken.picture} />
-        <Typography>{decodedToken.name}</Typography>
-      </Box>
-    );
   }
+
+  return (
+    <Box
+      sx={{
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Avatar src={decodedToken?.picture || ''} />
+      <Typography>{decodedToken?.name}</Typography>
+    </Box>
+  );
 }
 
 export default Home;
